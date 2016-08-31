@@ -44,12 +44,14 @@
                    $pdo = Database::connect();
                    $sql = 'SELECT * FROM movies ORDER BY Movie_name ASC;';
                    foreach ($pdo->query($sql) as $row) {
+                            $link = $row['Movie_URL'];
+                            //echo '<img src="'.$link.'" style="width:150px;height:200px;">';
                             echo '<tr>';
                             echo '<td>'. $row['Movie_Name'] . '</td>';
                             echo '<td>'. $row['Movie_Studio'] . '</td>';
                             echo '<td>'. $row['Movie_Year'] . '</td>';
-                            echo '<td>'. $row['Movie_Revenue'] . '</td>';
-                            echo '<td>'. $row['Movie_URL'] . '</td>';
+                            echo '<td>'.'$'. $row["Movie_Revenue"] . '</td>';
+                            echo '<td>'. '<img src="'.$link.'"style="width:150px;height:200px;">'.'</td>';
                             echo '</tr>';
                    }
                    Database::disconnect();
