@@ -14,12 +14,14 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+<link rel="stylesheet" type="text/css" href="styles.css">;
+
 </head>
  
 <body>
     <div class="container">
             <div class="row" id = "topbar">
-                <h3>Movie Grid</h3>
+                <h1>Movie Grid</h1>
                 <h5>Byron Inocencio</h5>
             </div>
             <div class="row">

@@ -1,0 +1,14 @@
+#topbar{
+
+    margin: auto;
+    width: 50%;
+    padding:20px;
+    text-align: center;
+    background:purple;
+    color: white;
+}
+
+#topbar h1{
+    font-weight: 700;
+
+}
