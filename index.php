@@ -36,6 +36,7 @@
                       <th>Year</th>
                       <th>Revenue</th>
                       <th>Image</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -52,7 +53,9 @@
                             echo '<td>'. $row['Movie_Year'] . '</td>';
                             echo '<td>'.'$'. $row["Movie_Revenue"] . '</td>';
                             echo '<td>'. '<img src="'.$link.'"style="width:150px;height:200px;">'.'</td>';
-                            echo '</tr>';
+                            echo '<td><a class="btn btn-default" href="view.php?Movie_ID='.$row['Movie_ID'].'">View</a></td>';  
+                          
+                           echo '</tr>';
                    }
                    Database::disconnect();
                   ?>
