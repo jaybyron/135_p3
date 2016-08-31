@@ -1,8 +1,67 @@
+<?php
+
+    require 'database.php';
+
+    if ( !empty($_POST)) {
+        // keep track validation errors
+        $nameError = null;
+        $studioError = null;
+        $yearError = null;
+        $revenueError = null;
+        $URLError =null
+
+        // keep track post values
+        $name = $_POST['name'];
+        $studio = $_POST['email'];
+        $year = $_POST['mobile'];
+        $revenue = $_POST['revenue'];
+        $URL = $_POST['URL'];
+
+        // validate input
+        $valid = true;
+        if (empty($name)) {
+            $nameError = 'Please enter Movie Name';
+            $valid = false;
+        }
+
+        if (empty($studio)) {
+            $studioError = 'Please enter Studio Name';
+            $valid = false;
+        }
+
+        if (empty($year)) {
+            $yearError = 'Please enter Year Value';
+            $valid = false;
+        }
+
+        if (empty($revenue)){
+
+            $revenueError = "Please enter Revenue value";
+            $valid = false;
+        }
+
+       if  (empty($URL)){
+           $URLError = "Please enter a valid image URL";
+           $valid = false;
+       }
+
+        // insert data
+        if ($valid) {
+            $pdo = Database::connect();
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql = "INSERT INTO movies (Movie_Name, Movie_Studio, Movie_Year, Movie_Revenue, Movie_URL) values(?, ?, ?,?,?)";
+            $q = $pdo->prepare($sql);
+            $q->execute(array($name,$studio,$year,$revenue,$url));
+            Database::disconnect();
+            header("Location: index.php");
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang = "en">
 <head>
       <meta charset ="utf-8">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -16,13 +75,13 @@
 <body>
     <div class="container">
      
-                <div class="span3 offset2">
+                <div class="span9">
                     <div class="row">
-                        <h3>Insert a new Movie</h3>
+                        <h3>Create a Customer</h3>
                     </div>
-             
-                    <form class="form-horizontal" action="create.php" method="post">
+                      <form class="form-horizontal" action="create.php" method="post">
 
+  
                       <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
                         <label class="control-label">Movie Name</label>
                         <div class="controls">
@@ -33,22 +92,23 @@
                         </div>
                       </div>
 
-                      <div class="control-group <?php echo !empty($emailError)?'error':'';?>">
-                        <label class="control-label">Email Address</label>
+
+                      <div class="control-group <?php echo !empty($studioError)?'error':'';?>">
+                        <label class="control-label">Studio Name</label>
                         <div class="controls">
-                            <input name="email" type="text" placeholder="Email Address" value="<?php echo !empty($email)?$email:'';?>">
-                            <?php if (!empty($emailError)): ?>
-                                <span class="help-inline"><?php echo $emailError;?></span>
+                            <input name="studio" type="text" placeholder="Studio Name" value="<?php echo !empty($studio)?$studio:'';?>">
+                            <?php if (!empty($studioError)): ?>
+                                <span class="help-inline"><?php echo $studioError;?></span>
                             <?php endif;?>
                         </div>
                       </div>
-
-                      <div class="control-group <?php echo !empty($mobileError)?'error':'';?>">
-                        <label class="control-label">Mobile Number</label>
+                    
+                     <div class="control-group <?php echo !empty($yearError)?'error':'';?>">
+                        <label class="control-label">Release Year</label>
                         <div class="controls">
-                            <input name="mobile" type="text"  placeholder="Mobile Number" value="<?php echo !empty($mobile)?$mobile:'';?>">
-                            <?php if (!empty($mobileError)): ?>
-                                <span class="help-inline"><?php echo $mobileError;?></span>
+                            <input name="year" type="text"  placeholder="Release Year" value="<?php echo !empty($year)?$year:'';?>">
+                            <?php if (!empty($yearError)): ?>
+                                <span class="help-inline"><?php echo $yearError;?></span>
                             <?php endif;?>
                         </div>
                       </div>
