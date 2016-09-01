@@ -21,7 +21,7 @@
 <body>
     <div class="container">
             <div class="row" id = "topbar">
-                <h1>Movie Grid</h1>
+                <h1>MOVIE GRID</h1>
                 <h5>Byron Inocencio</h5>
             </div>
             <div class="row">
@@ -35,7 +35,7 @@
                       <th>Studio</th>
                       <th>Year</th>
                       <th>Revenue</th>
-                      <th>Image</th>
+                      <th>Movie Poster</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -53,9 +53,14 @@
                             echo '<td>'. $row['Movie_Year'] . '</td>';
                             echo '<td>'.'$'. $row["Movie_Revenue"] . '</td>';
                             echo '<td>'. '<img src="'.$link.'"style="width:150px;height:200px;">'.'</td>';
-                            echo '<td><a class="btn btn-default" href="view.php?Movie_ID='.$row['Movie_ID'].'">View</a></td>';  
-                          
-                           echo '</tr>';
+                            echo '<td width =250>';
+                            echo '<a class="btn btn-default" href="view.php?Movie_ID='.$row['Movie_ID'].'">View</a>';  
+                            echo ' ';
+                            echo '<a class="btn btn-success" href="update.php?Movie_ID='.$row['Movie_ID'].'">Update</a>';
+                            echo ' ';
+                            echo '<a class= "btn btn-danger" href="delete.php?id='.$row['id'].'">Delete</a>';
+                            echo '</td>';
+                            echo '</tr>';
                    }
                    Database::disconnect();
                   ?>
