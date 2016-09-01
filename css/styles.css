@@ -10,6 +10,10 @@
     border-bottom-left-radius: 50px;
 } 
 
+.pag{
+  float:right;
+}
+
 #movcontent{
    margin:auto 50%;
    width:100%;

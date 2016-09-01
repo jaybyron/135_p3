@@ -33,6 +33,10 @@
                <p>
                    <a href="." class="btn btn-default">Home</a>
                    <a href="create.php" class="btn btn-success">Add Movie</a>
+                   <a class = "pag btn" href="index.php?pag=all<?php if(!empty($_GET['sort']))echo '&sort='.$_GET['sort']?>">All</a>
+                   <a class = "pag btn" href="index.php?pag=15<?php if(!empty($_GET['sort']))echo '&sort='.$_GET['sort']?>">15</a>
+                   <a class = "pag btn" href="index.php?pag=10<?php if(!empty($_GET['sort']))echo '&sort='.$_GET['sort']?>">10</a>
+                   <a class = "pag btn" href="index.php?pag=5<?php if(!empty($_GET['sort']))echo '&sort='.$_GET['sort']?>">5</a>
                </p>
                 <table class="table table-striped table-bordered">
                   <thead>

@@ -11,8 +11,17 @@ class Paginator
 
     public function __construct()
     {
+        if(!empty($_GET['pag'])){
+           if($_GET['pag'] == "all"){
+               $this->itemsPerPage =9999;
+           }else{
+           $this->itemsPerPage = $_GET['pag'];
+           }
+        }
         //set default values
+        else{
         $this->itemsPerPage = 5;
+        }
         $this->range = 5;
         $this->navigation = array(
             'next' => 'Next',
