@@ -113,7 +113,7 @@
 <body>
     <div class="container">
     
-    			<div class="span10 offset1" id="updateDiv">
+    			<div class="span10 offset1" id="cw">
     				<div class="row">
 		    			<h3>Update A Movie!</h3>
 		    		</div>
@@ -176,6 +176,7 @@
 
 
 					  <div class="form-actions">
+                                                  <br>
 						  <button type="submit" class="btn btn-success">Update</button>
 						  <a class="btn" href="index.php">Back</a>
 						</div>
