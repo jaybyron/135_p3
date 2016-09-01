@@ -37,10 +37,10 @@
                 <table class="table table-striped table-bordered">
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Studio</th>
-                      <th>Year</th>
-                      <th>Revenue</th>
+                      <th><a href="index.php?sort=name">Name</a></th>
+                      <th><a href="index.php?sort=studio">Studio</a></th>
+                      <th><a href="index.php?sort=year">Year</a></th>
+                      <th><a href="index.php?sort=revenue">Revenue</a></th>
                       <th>Movie Poster</th>
                       <th id="actionHeader">Action</th>
                     </tr>
@@ -52,14 +52,31 @@
                    $paginator = new Paginator();
                    $pdo = Database::connect();
 
-             
+                   $sort = $_GET['sort'];             
                        
                    $sql = 'SELECT count(*) FROM movies ';
                    $paginator->paginate($pdo->query($sql)->fetchColumn());
 
                    $start = (($paginator->getCurrentPage()-1)*$paginator->itemsPerPage);
                    $length = ($paginator->itemsPerPage);
-                   $sql = "SELECT * FROM movies limit $start, $length ";
+                   
+                   if($sort == "name"){
+                      $sql ="SELECT * FROM movies ORDER BY Movie_Name ASC limit $start, $length ";
+                   }
+                   elseif($sort == "studio"){
+                      $sql ="SELECT * FROM movies ORDER BY Movie_Studio ASC limit $start, $length ";
+                   }
+                   elseif($sort == "year"){
+                      $sql ="SELECT * FROM movies ORDER BY Movie_Year DESC limit $start, $length ";
+                   }
+
+                   elseif($sort == "revenue"){
+                      $sql ="SELECT * FROM movies ORDER BY Movie_Revenue DESC limit $start, $length ";
+                   }
+
+
+                   else{
+                   $sql = "SELECT * FROM movies limit $start, $length ";}
                    foreach ($pdo->query($sql) as $row) {
                             $link = $row['Movie_URL'];
                             //echo '<img src="'.$link.'" style="width:150px;height:200px;">';
