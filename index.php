@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <title> Movie Grid</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 
@@ -14,7 +15,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" type="text/css" href="styles.css">;
+<link rel="stylesheet" type="text/css" href="styles.css">
 
 </head>
  
@@ -26,7 +27,7 @@
             </div>
             <div class="row">
                <p>
-                   <a href="create.php" class="btn btn-success">Create</a>
+                   <a href="create.php" class="btn btn-success">Add Movie</a>
                </p>
                 <table class="table table-striped table-bordered">
                   <thead>
@@ -52,8 +53,8 @@
                             echo '<td>'. $row['Movie_Studio'] . '</td>';
                             echo '<td>'. $row['Movie_Year'] . '</td>';
                             echo '<td>'.'$'. $row["Movie_Revenue"] . '</td>';
-                            echo '<td>'. '<img src="'.$link.'"style="width:150px;height:200px;">'.'</td>';
-                            echo '<td width =250>';
+                            echo '<td>'. '<img src="'.$link.'" style="width:150px;height:200px;" alt="">'.'</td>';
+                            echo '<td>';
                             echo '<a class="btn btn-default" href="view.php?Movie_ID='.$row['Movie_ID'].'">View</a>';  
                             echo ' ';
                             echo '<a class="btn btn-success" href="update.php?Movie_ID='.$row['Movie_ID'].'">Update</a>';
