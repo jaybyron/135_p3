@@ -80,7 +80,7 @@
 
 
                    else{
-                   $sql = "SELECT * FROM movies limit $start, $length ";}
+                   $sql = "SELECT * FROM movies ORDER BY Movie_ID DESC limit $start, $length ";}
                    foreach ($pdo->query($sql) as $row) {
                             $link = $row['Movie_URL'];
                             //echo '<img src="'.$link.'" style="width:150px;height:200px;">';
@@ -89,7 +89,7 @@
                             echo '<td>'. $row['Movie_Studio'] . '</td>';
                             echo '<td>'. $row['Movie_Year'] . '</td>';
                             echo '<td>'.'$'. $row["Movie_Revenue"] .' million'.'</td>';
-                            echo '<td>'. '<img src="'.$link.'" style="width:150px;height:200px;" alt="">'.'</td>';
+                            echo '<td>'. '<a href="'.$link.'"><img src="'.$link.'" style="width:150px;height:200px;" alt=""></a>'.'</td>';
                             echo '<td>';
                             echo '<br><a class="btn btn-default" href="view.php?Movie_ID='.$row['Movie_ID'].'">View</a>';  
                             echo '<br><br>';

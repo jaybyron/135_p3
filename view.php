@@ -42,8 +42,8 @@
    
                   <?php echo '<img id="viewimage" src="'.$data['Movie_URL'].'" alt="">';?>
                    <div class="row" id="movcontent">
-                          
-                         <h2> Movie Details </h2>                      
+                      
+                      <h2> Movie Details </h2>    
                       <div class="">
                         <label class="">Movie Title:</label>
                                 <?php echo $data['Movie_Name'];?>
