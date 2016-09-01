@@ -58,7 +58,7 @@
                             echo ' ';
                             echo '<a class="btn btn-success" href="update.php?Movie_ID='.$row['Movie_ID'].'">Update</a>';
                             echo ' ';
-                            echo '<a class= "btn btn-danger" href="delete.php?id='.$row['id'].'">Delete</a>';
+                            echo '<a class= "btn btn-danger" href="delete.php?Movie_ID='.$row['Movie_ID'].'">Delete</a>';
                             echo '</td>';
                             echo '</tr>';
                    }
