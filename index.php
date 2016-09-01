@@ -20,13 +20,18 @@
 </head>
  
 <body>
-    <div class="container">
+    <div class="container" id="homepage">
             <div class="row" id = "topbar">
-                <h1>MOVIE GRID</h1>
+                <a href="."> <h1> MOVIE GRID </h1> </a>
                 <h5>Byron Inocencio</h5>
+            </div>
+            <div class="row" id="description">
+                <p> This is a very simple Movie Grid that follows CRUD design patterns. This application is written in PHP and connected to a MYSQL Database. This was created for CSE 135 Programming Assignment 3, Summer 2016 with Thomas Powell.
+<br><br><b> Note: </b>Movie Posters have to be a real link or have to be manually inserted into our image folder on the server. Recommended: Use posters from impawards.com for simple testing with a valid image. Ideally, we would upload images within the application interface, but due to time constraint this was not implemented</p>
             </div>
             <div class="row">
                <p>
+                   <a href="." class="btn btn-default">Home</a>
                    <a href="create.php" class="btn btn-success">Add Movie</a>
                </p>
                 <table class="table table-striped table-bordered">
@@ -37,7 +42,7 @@
                       <th>Year</th>
                       <th>Revenue</th>
                       <th>Movie Poster</th>
-                      <th>Action</th>
+                      <th id="actionHeader">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -62,13 +67,13 @@
                             echo '<td>'. $row['Movie_Name'] . '</td>';
                             echo '<td>'. $row['Movie_Studio'] . '</td>';
                             echo '<td>'. $row['Movie_Year'] . '</td>';
-                            echo '<td>'.'$'. $row["Movie_Revenue"] . '</td>';
+                            echo '<td>'.'$'. $row["Movie_Revenue"] .' million'.'</td>';
                             echo '<td>'. '<img src="'.$link.'" style="width:150px;height:200px;" alt="">'.'</td>';
                             echo '<td>';
-                            echo '<a class="btn btn-default" href="view.php?Movie_ID='.$row['Movie_ID'].'">View</a>';  
-                            echo ' ';
-                            echo '<a class="btn btn-success" href="update.php?Movie_ID='.$row['Movie_ID'].'">Update</a>';
-                            echo ' ';
+                            echo '<br><a class="btn btn-default" href="view.php?Movie_ID='.$row['Movie_ID'].'">View</a>';  
+                            echo '<br><br>';
+                            echo '<a class="btn btn-primary" href="update.php?Movie_ID='.$row['Movie_ID'].'">Update</a>';
+                            echo '<br><br>';
                             echo '<a class= "btn btn-danger" href="delete.php?Movie_ID='.$row['Movie_ID'].'">Delete</a>';
                             echo '</td>';
                             echo '</tr>';

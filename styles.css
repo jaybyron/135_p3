@@ -6,9 +6,41 @@
     text-align: center;
     background:purple;
     color: white;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+} 
+
+#description{
+    margin: auto;
+    width: 75%;
+    padding-top:20px;
+    text-align: center;
 }
 
 #topbar h1{
     font-weight: 700;
 
+}
+
+
+#homepage h1{
+   color:white;
+}
+
+#homepage a{
+   text-decoration:none;
+
+}
+
+th{
+  text-align: center;
+  font-size:25px;
+}
+td{
+   text-align: center;
+   vertical-align: center;
+}
+
+#actionHeader{
+   width:200px;
 }
