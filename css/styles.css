@@ -16,9 +16,15 @@
 
 #movcontent{
    margin:auto 50%;
-   width:100%;
+   width:100px;
 }
-
+form{
+  width: 500px;
+}
+#cw{
+   margin:auto 50%;
+   width:300px;
+}
 #viewimage {
   padding-top:20px;
   margin: auto 40%;

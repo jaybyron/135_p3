@@ -36,22 +36,26 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+
+
 </head>
  
 <body>
     <div class="container">
      
-                <div class="span10 offset1">
+                <div class="" id="cw">
                     <div class="row">
                         <h3>Delete a Movie</h3>
                     </div>
                      
                     <form class="form-horizontal" action="delete.php" method="post">
                       <input type="hidden" name="Movie_ID" value="<?php echo $id;?>"/>
-                      <p class="alert alert-error">Are you sure to delete?</p>
+                      <p class="alert alert-danger">Are you sure to delete?</p>
                       <div class="form-actions">
                           <button type="submit" class="btn btn-danger">Yes</button>
-                          <a class="btn" href="index.php">No</a>
+                          <a class="btn btn-default" href="index.php">No</a>
                         </div>
                     </form>
                 </div>

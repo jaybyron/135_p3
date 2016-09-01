@@ -41,7 +41,19 @@
                      $revenueError= 'Too large of a number. Highest value: 100000';
                      $valid = false;
                 }
+                if (($year>2016)){
+                    $yearError ='Please enter a valid year in the past';
+                    $valid = false;
+                }
 
+                if (($revenue <0)){
+                     $revenueError ='please enter a valid revenue: (NON-NEGATIVE) ';
+                     $valid = false;
+                }
+
+                if (($year<0)){
+                    $revenueError ='please enter a valid year: (NON-NEGATIVE) ';
+                }
                 if (empty($URL)){
                        $URLError = 'please enter a valid URL';
                        $valid = false;
@@ -76,20 +88,16 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 
+<link rel="stylesheet" type="text/css" href="css/styles.css">
 
 
 </head>
 
 <body>
     <div class="container">
-    
-    			<div class="span10 offset1">
-    				<div class="row">
-		    			<h3>Insert A Movie!</h3>
-		    		</div>
-    		
-	    			<form class="form-horizontal" action="create.php" method="post">
-					  
+    			<div class="span12" id ="cw">
+                                         <h3>Create Movie!</h3>   		
+ 	    			<form class="form-horizontal" action="create.php" method="post">
                                           <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
 					    <label class="control-label">Movie Title</label>
 					    <div class="controls">
@@ -146,8 +154,9 @@
 
 
 					  <div class="form-actions">
+                                                  <br>
 						  <button type="submit" class="btn btn-success">Create</button>
-						  <a class="btn" href="index.php">Back</a>
+						  <a class="btn btn-default" href="index.php">Back</a>
 						</div>
 					</form>
 				</div>

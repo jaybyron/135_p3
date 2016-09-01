@@ -104,6 +104,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+
 
 
 </head>
@@ -111,7 +113,7 @@
 <body>
     <div class="container">
     
-    			<div class="span10 offset1">
+    			<div class="span10 offset1" id="updateDiv">
     				<div class="row">
 		    			<h3>Update A Movie!</h3>
 		    		</div>
@@ -167,7 +169,7 @@
 					    <div class="controls">
 					      	<input name="URL" type="text"  placeholder="IMG URL" value="<?php echo !empty($URL)?$URL:'';?>">
 					      	<?php if (!empty($URL)): ?>
-					      		<span class="help-inline"><?php echo $URL;?></span>
+					      		<span class="help-inline"><?php  ;?></span>
 					      	<?php endif;?>
 					    </div>
 					  </div>
