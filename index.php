@@ -41,10 +41,10 @@
                 <table class="table table-striped table-bordered">
                   <thead>
                     <tr>
-                      <th><a href="index.php?sort=name">Name</a></th>
-                      <th><a href="index.php?sort=studio">Studio</a></th>
-                      <th><a href="index.php?sort=year">Year</a></th>
-                      <th><a href="index.php?sort=revenue">Revenue</a></th>
+                      <th><a href="index.php?sort=name<?php if(!empty($_GET['pag']))echo '&pag='.$_GET['pag']?>">Name</a></th>
+                      <th><a href="index.php?sort=studio<?php if(!empty($_GET['pag']))echo '&pag='.$_GET['pag']?>">Studio</a></th>
+                      <th><a href="index.php?sort=year<?php if(!empty($_GET['pag']))echo '&pag='.$_GET['pag']?>">Year</a></th>
+                      <th><a href="index.php?sort=revenue<?php if(!empty($_GET['pag']))echo '&pag='.$_GET['pag']?>">Revenue</a></th>
                       <th>Movie Poster</th>
                       <th id="actionHeader">Action</th>
                     </tr>

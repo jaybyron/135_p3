@@ -50,10 +50,12 @@
 th{
   text-align: center;
   font-size:25px;
+
 }
 td{
-   text-align: center;
    vertical-align: center;
+   text-align: center;
+ 
 }
 
 #actionHeader{
