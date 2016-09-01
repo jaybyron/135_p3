@@ -43,8 +43,18 @@
                   <tbody>
                   <?php
                    include 'database.php';
+                   include 'paginator.php';
+                   $paginator = new Paginator();
                    $pdo = Database::connect();
-                   $sql = 'SELECT * FROM movies ORDER BY Movie_name ASC;';
+
+             
+                       
+                   $sql = 'SELECT count(*) FROM movies ';
+                   $paginator->paginate($pdo->query($sql)->fetchColumn());
+
+                   $start = (($paginator->getCurrentPage()-1)*$paginator->itemsPerPage);
+                   $length = ($paginator->itemsPerPage);
+                   $sql = "SELECT * FROM movies limit $start, $length ";
                    foreach ($pdo->query($sql) as $row) {
                             $link = $row['Movie_URL'];
                             //echo '<img src="'.$link.'" style="width:150px;height:200px;">';
@@ -67,6 +77,7 @@
                   ?>
                   </tbody>
             </table>
+              <?php echo $paginator->pageNav();?>
         </div>
     </div> <!-- /container -->
   </body>
