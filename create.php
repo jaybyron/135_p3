@@ -37,8 +37,8 @@
                        $valid = false;
                 }
 
-                if (($revenue > 5000000000)){
-                     $revenueError= 'Too large of a number';
+                if (($revenue > 100000)){
+                     $revenueError= 'Too large of a number. Highest value: 100000';
                      $valid = false;
                 }
 

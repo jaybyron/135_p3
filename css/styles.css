@@ -10,6 +10,17 @@
     border-bottom-left-radius: 50px;
 } 
 
+#movcontent{
+   margin:auto 50%;
+   width:100%;
+}
+
+#viewimage {
+  padding-top:20px;
+  margin: auto 40%;
+  max-width: 500px;
+  max-height:750px;
+}
 #description{
     margin: auto;
     width: 75%;
@@ -44,3 +55,8 @@ td{
 #actionHeader{
    width:200px;
 }
+
+#pagination{
+   font-weight: 700;
+}
+

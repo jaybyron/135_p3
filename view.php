@@ -32,53 +32,43 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 
+<link rel="stylesheet" type="text/css" href="css/styles.css">
 
 
 </head>
  
 <body>
-    <div class="container">
-     
-                <div class="span10 offset1">
-                    <div class="row">
-                        <h3>Movie Details</h3>
-                    </div>
-                     
-                    <div class="form-horizontal" >
-                      <div class="control-group">
-                        <label class="control-label">Movie Title</label>
-                        <div class="controls">
-                            <label class="checkbox">
+    <div class="container-fluid">
+   
+                  <?php echo '<img id="viewimage" src="'.$data['Movie_URL'].'" alt="">';?>
+                   <div class="row" id="movcontent">
+                          
+                         <h2> Movie Details </h2>                      
+                      <div class="">
+                        <label class="">Movie Title:</label>
                                 <?php echo $data['Movie_Name'];?>
-                            </label>
-                        </div>
                       </div>
 
-                      <div class="control-group">
-                        <label class="control-label">Movie Studios</label>
-                        <div class="controls">
-                            <label class="checkbox">
+                      <div class="">
+                        <label class="">Movie Studios:</label>
                                 <?php echo $data['Movie_Studio'];?>
-                            </label>
-                        </div>
                       </div>
 
-                      <div class="control-group">
-                        <label class="control-label">Movie Release Date</label>
-                        <div class="controls">
-                            <label class="checkbox">
+                      <div class="">
+                        <label class="">Movie Release Date:</label>
                                 <?php echo $data['Movie_Year'];?>
-                            </label>
-                        </div>
+                      </div>
+
+                      <div class="">
+                        <label class=""> Movie Revenue:</label>
+                                <?php echo '$'.$data['Movie_Revenue'].' Million';?>
                       </div>
 
                         <div class="form-actions">
-                          <a class="btn" href="index.php">Back</a>
+                          <a class="btn btn-primary" href="index.php">Back</a>
                        </div>
                      
-                      
                     </div>
-                </div>
                  
     </div> <!-- /container -->
   </body>
